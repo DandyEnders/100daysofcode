@@ -34,6 +34,9 @@ print( 2 ** 3) # power
 
 print("abc")
 
+print(round(8 / 3, 2))
 
+print(8 // 3)
 
-
+score = 0
+print(f"your score is {score}")
