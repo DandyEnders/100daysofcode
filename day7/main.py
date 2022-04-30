@@ -34,6 +34,7 @@ while not end_of_game:
     if guess_letter not in chosen_word:
         hangman_stage += 1
         print(f"The word '{guess_letter}' is not in the word.")
+        print("You lose a life.")
 
     if "_" not in word_line:
         end_of_game = True
