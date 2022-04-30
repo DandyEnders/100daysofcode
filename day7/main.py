@@ -7,6 +7,8 @@ stages.reverse()
 logo = hangman_art.logo
 word_list = hangman_words.word_list 
 
+print(logo)
+
 chosen_word = random.choice(word_list)
 print(f"Pssst, The solution is {chosen_word}")
 
