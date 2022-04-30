@@ -1,10 +1,4 @@
 import random
-def print_list(lst: list):
-  result = '["'
-  result += '", "'.join(lst)
-  result += '"]'
-  print(result)
-    
 
 word_list = ["ardvark", "baboon", "camel"]
 
