@@ -5,7 +5,7 @@ import hangman_words
 stages = hangman_art.stages
 stages.reverse()
 logo = hangman_art.logo
-word_list = hangman_words.word_list 
+word_list = hangman_words.word_list
 
 print(logo)
 
@@ -20,6 +20,9 @@ end_of_game = False
 is_player_win = False
 while not end_of_game:
     guess_letter = input("Guess a letter: ").lower()
+
+    if guess_letter in word_line:
+        print(f"You have already guessed the letter {guess_letter}.\nPlease try another.")
 
     for i, l in enumerate(chosen_word):
         if l == guess_letter:
