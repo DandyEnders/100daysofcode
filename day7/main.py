@@ -1,6 +1,7 @@
 import random
 import hangman_art
 import hangman_words
+import os
 
 stages = hangman_art.stages
 stages.reverse()
@@ -19,7 +20,9 @@ print(word_line)
 end_of_game = False
 is_player_win = False
 while not end_of_game:
+
     guess_letter = input("Guess a letter: ").lower()
+    os.system("clear") if os.name == 'posix' else os.system("cls")
 
     if guess_letter in word_line:
         print(f"You have already guessed the letter {guess_letter}.\nPlease try another.")
