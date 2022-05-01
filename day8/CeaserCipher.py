@@ -23,10 +23,11 @@ retry = "y"
 while retry == "y":
     direction = input(
         "Type 'encode' to encrypt, type 'decode' to decrypt:\n").lower()
+    if direction not in {"encode", "decode"}:
+      print("Only 'encode' and 'decode' allowed.")
+      continue
+
     text = input("Type your message:\n").lower()
     shift = int(input("Type the shift number:\n"))
-    if direction in {"encode", "decode"}:
-        caesar(text, shift, direction)
-    else:
-        print("Only 'encode' and 'decode' allowed.")
+    caesar(text, shift, direction)
     retry = input("Do you want to work on another cipher? Y / N\n").lower()
