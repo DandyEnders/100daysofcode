@@ -3,9 +3,6 @@ alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n'
 
 print(art.logo)
 
-direction = input("Type 'encode' to encrypt, type 'decode' to decrypt:\n").lower()
-text = input("Type your message:\n").lower()
-shift = int(input("Type the shift number:\n"))
 
 def caesar(start_text, shift_amount, cipher_direction):
   end_text = ""
@@ -20,9 +17,13 @@ def caesar(start_text, shift_amount, cipher_direction):
       end_text += letter
   print(f"The {cipher_direction}d text is {end_text}")
 
-if direction == "encode":
-  caesar(text, shift, direction)
-elif direction == "decode":
-  caesar(text, shift, direction)
-else:
-  print("Only 'encode' and 'decode' allowed.")
+retry = "y"
+while retry == "y":
+  direction = input("Type 'encode' to encrypt, type 'decode' to decrypt:\n").lower()
+  text = input("Type your message:\n").lower()
+  shift = int(input("Type the shift number:\n"))
+  if direction in {"encode", "decode"}:
+    caesar(text, shift, direction)
+  else:
+    print("Only 'encode' and 'decode' allowed.")
+  retry = input("Do you want to work on another cipher? Y / N\n").lower()
