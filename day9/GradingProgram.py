@@ -24,3 +24,13 @@ for name in student_scores:
   student_grades[name] = grade
 
 print(student_grades)
+
+capitals = {
+  "France" : "Paris",
+  "Germany": "Berlin",
+}
+
+travel_log = {
+  "France": {"cities_visitied": ["Paris", "Lille", "Dijon"]},
+  "Germany": ["Berlin", "Hamburg", "Stuttgart"]
+}
