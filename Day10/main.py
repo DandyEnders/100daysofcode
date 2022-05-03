@@ -1,4 +1,4 @@
-def format_name(first_name, last_name):
+def format_name(first_name: str, last_name: str) -> str:
   """Take a first and last name and format it to
   return the title case version of the name.
 
@@ -14,7 +14,7 @@ def format_name(first_name, last_name):
   formatted_first_name = first_name.title()
   formatted_last_name = last_name.title()
   
-  return formatted_first_name, formatted_last_name
+  return f"{formatted_first_name} {formatted_last_name}"
   
 formatted_string = format_name("John", "Doe")
 print(formatted_string)
