@@ -19,3 +19,17 @@
 
 # drink_potion()
 # print(potion_strength)
+
+# Global scope
+
+player_health = 10
+
+
+def game():
+  def drink_potion():
+    potion_strength = 2
+    print(player_health)
+
+
+game()
+print(player_health)
