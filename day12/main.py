@@ -22,14 +22,30 @@
 
 # Global scope
 
-player_health = 10
+# player_health = 10
 
 
-def game():
-  def drink_potion():
-    potion_strength = 2
-    print(player_health)
+# def game():
+#   def drink_potion():
+#     potion_strength = 2
+#     print(player_health)
 
 
-game()
-print(player_health)
+# game()
+# print(player_health)
+
+# Python has no block scope
+# if a new variable is defined in if statement,
+# it can be used outside the if statement.
+# (but if inside the if statement was never run,
+#  it will cause a syntax error to call variable
+#  inside.)
+game_level = 3
+def create_enemy():
+  enemies = ["Skeleton", "Zombie", "Alien"]
+  if game_level < 5:
+    new_enemy = enemies[0]
+
+  print(new_enemy)
+
+
