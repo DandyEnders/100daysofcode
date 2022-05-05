@@ -50,11 +50,16 @@
 
 # Modifying Global scope
 
-enemies = 1
+# enemies = 1
 
-def increase_enemies():
-  print(f"enemies inside function: {enemies}")
-  return enemies + 1
+# def increase_enemies():
+#   print(f"enemies inside function: {enemies}")
+#   return enemies + 1
 
-enemies = increase_enemies()
-print(f"enemies outside function: {enemies}")
+# enemies = increase_enemies()
+# print(f"enemies outside function: {enemies}")
+
+# global constants
+
+PI = 3.141592
+URL = "https//www.google.com"
