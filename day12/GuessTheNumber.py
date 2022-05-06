@@ -18,7 +18,7 @@ while attempts > 0:
   if guess > solution:
     print("Too high.")
   elif guess == solution:
-    print("You got it!")
+    print(f"You got it! The answer was {solution}.")
     is_win = True
     attempts = -1
   else:
