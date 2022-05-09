@@ -40,9 +40,13 @@ while is_machine_on:
     if user_command == "off":
         is_machine_on = False
         print("Turning off the coffee machine. Good bye!")
+    # DONE: if input is "report", print Water, Milk, Coffee, Money remainders
+    #   each in each line
+    elif user_command == "report":
+        for name, amount in resources.items():
+            print(f"{name}: {amount}")
 
-# TODO: if input is "report", print Water, Milk, Coffee, Money remainders
-#   each in each line
+
 # TODO: if input is either of the coffee choices,
 #   and if resources are not sufficient,
 #   print "Sorry there is not enough {resource}."
