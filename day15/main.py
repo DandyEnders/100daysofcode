@@ -60,21 +60,26 @@ while is_machine_on:
     if user_command == "off":
         is_machine_on = False
         print("Turning off the coffee machine. Good bye!")
+
     # DONE: if input is "report", print Water, Milk, Coffee, Money remainders
     #   each in each line
     elif user_command == "report":
         for name, amount in resources.items():
             print(f"{name}: {amount}")
+
     # DONE: if input is either of the coffee choices,
     #   and if resources are not sufficient,
     #   print "Sorry there is not enough {resource}."
     elif menu_choice in MENU.keys() and not is_resources_sufficient_for(menu_choice):
         print(f"Sorry there is not enough {', '.join(deficient_resources(menu_choice))}.")
 
-# TODO: if input is either of the coffee choices,
-#   and if resources are sufficient,
-#   ask user for each coin types in each line:
-#   input("Insert coin in the format of: #quarters #dimes #nickles #pennies
+    # DONE: if input is either of the coffee choices,
+    #   and if resources are sufficient,
+    #   ask user for each coin types in each line:
+    #   input("Insert coin in the format of: #quarters #dimes #nickles #pennies
+    elif menu_choice in MENU.keys() and is_resources_sufficient_for(menu_choice):
+        quarter, dime, nickle, penny = input("Insert coin in the format of: #quarters #dimes #nickles #pennies: ")
+
 # TODO: if user did not insert enough money,
 #   print("Sorry that's not enough money. Money refunded.")
 # TODO: if user did insert enough money,
