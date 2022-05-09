@@ -30,11 +30,31 @@ resources = {
     "coffee": 100,
 }
 
+
+def is_resources_sufficient_for(input_menu):
+    assert input_menu in MENU.keys()
+
+    water, milk, coffee = MENU["input_menu"]["ingredients"].values()
+    return resources.water >= water and resources.milk >= milk and resources.coffee >= coffee
+
+
+def deficient_resources(input_menu) -> list:
+    assert input_menu in MENU.keys()
+
+    result = []
+    req_water, req_milk, req_coffee = MENU["input_menu"]["ingredients"].values()
+    if req_water > resources.water: result.append("water")
+    if req_milk > resources.milk: result.append("milk")
+    if req_coffee > resources.coffee: result.append("coffee")
+    return result
+
+
 # DONE: do following while dispensing is not finished:
 is_machine_on = True
 while is_machine_on:
     # DONE: take input("What would you like? (espresso/latte/cappuccino): ")
     user_command = input("What would you like? (espresso/latte/cappuccino): ")
+    menu_choice = user_command
 
     # DONE: if input is "off", terminate dispensing
     if user_command == "off":
@@ -45,11 +65,12 @@ while is_machine_on:
     elif user_command == "report":
         for name, amount in resources.items():
             print(f"{name}: {amount}")
+    # DONE: if input is either of the coffee choices,
+    #   and if resources are not sufficient,
+    #   print "Sorry there is not enough {resource}."
+    elif menu_choice in MENU.keys() and not is_resources_sufficient_for(menu_choice):
+        print(f"Sorry there is not enough {', '.join(deficient_resources(menu_choice))}.")
 
-
-# TODO: if input is either of the coffee choices,
-#   and if resources are not sufficient,
-#   print "Sorry there is not enough {resource}."
 # TODO: if input is either of the coffee choices,
 #   and if resources are sufficient,
 #   ask user for each coin types in each line:
