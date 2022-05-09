@@ -98,7 +98,7 @@ while is_machine_on:
         # DONE: if user did insert enough money,
         #   reflect money input into amount of money remaining
         else:
-            resources["money"] -= MENU[menu_choice]["cost"]
+            resources["money"] += MENU[menu_choice]["cost"]
 
             # DONE: if user inserted too much money, offer the change
             #   print("Here is ${amount:.2f} dollars in change.")
