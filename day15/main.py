@@ -32,8 +32,6 @@ resources = {
 }
 
 
-
-
 def is_resources_sufficient_for(input_menu):
     assert input_menu in MENU.keys()
 
@@ -96,12 +94,17 @@ while is_machine_on:
         quarter, dime, nickle, penny = input("Insert coin in the format of: #quarters #dimes #nickles #pennies: ")
         quarter, dime, nickle, penny = int(quarter), int(dime), int(nickle), int(penny)
         money_total = quarter * 0.25 + dime * 0.1 + nickle * 0.05 + penny * 0.01
+
         # DONE: if user did not insert enough money,
         #   print("Sorry that's not enough money. Money refunded.")
         if not is_money_sufficient_for(menu_choice, money_total):
             print("Sorry that's not enough money. Money refunded.")
-# TODO: if user did insert enough money,
-#   reflect money input into amount of money remaining
+
+        # DONE: if user did insert enough money,
+        #   reflect money input into amount of money remaining
+        else:
+            resources["money"] -= MENU[menu_choice]["cost"]
+
 # TODO: if user inserted too much money, offer the change
 #   print("Here is ${amount:.2f} dollars in change.")
 # TODO: if the coffee transaction was successful,
