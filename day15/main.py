@@ -86,7 +86,7 @@ while is_machine_on:
     #   ask user for each coin types in each line:
     #   input("Insert coin in the format of: #quarters #dimes #nickles #pennies
     elif menu_choice in MENU.keys() and is_resources_sufficient_for(menu_choice):
-        quarter, dime, nickle, penny = input("Insert coin in the format of: #quarters #dimes #nickles #pennies: ")
+        quarter, dime, nickle, penny = input("Insert coin in the format of: #quarters #dimes #nickles #pennies: ").split()
         quarter, dime, nickle, penny = int(quarter), int(dime), int(nickle), int(penny)
         money_total = quarter * 0.25 + dime * 0.1 + nickle * 0.05 + penny * 0.01
 
