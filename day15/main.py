@@ -105,8 +105,13 @@ while is_machine_on:
         else:
             resources["money"] -= MENU[menu_choice]["cost"]
 
-# TODO: if user inserted too much money, offer the change
-#   print("Here is ${amount:.2f} dollars in change.")
+            # DONE: if user inserted too much money, offer the change
+            #   print("Here is ${amount:.2f} dollars in change.")
+            change = money_total - MENU[menu_choice]["cost"]
+            if change > 0:
+                print(f"Here is ${change:.2f} dollars in change.")
+
+
 # TODO: if the coffee transaction was successful,
 #   deduct the amount of water, milk and coffee from resource
 #   then, print("Here is your {choice}. Enjoy!")
