@@ -32,7 +32,7 @@ resources = {
 }
 
 
-def is_resources_sufficient_for(input_menu):
+def is_resources_sufficient_for(input_menu) -> bool:
     assert input_menu in MENU.keys()
 
     for ingredient, cost in MENU[input_menu]["ingredients"].items():
@@ -55,6 +55,15 @@ def is_money_sufficient_for(input_menu, money_paid) -> bool:
     assert is_resources_sufficient_for(input_menu)
 
     return MENU[input_menu]["cost"] <= money_paid
+
+
+def dispense_menu(input_menu) -> None:
+    assert is_resources_sufficient_for(input_menu)
+
+    for ingredient, cost in MENU[input_menu]["ingredients"].items():
+        resources[ingredient] -= cost
+
+    print(f"Here is your {menu_choice}. Enjoy!")
 
 
 # DONE: do following while dispensing is not finished:
@@ -86,7 +95,8 @@ while is_machine_on:
     #   ask user for each coin types in each line:
     #   input("Insert coin in the format of: #quarters #dimes #nickles #pennies
     elif menu_choice in MENU.keys() and is_resources_sufficient_for(menu_choice):
-        quarter, dime, nickle, penny = input("Insert coin in the format of: #quarters #dimes #nickles #pennies: ").split()
+        quarter, dime, nickle, penny = input(
+            "Insert coin in the format of: #quarters #dimes #nickles #pennies: ").split()
         quarter, dime, nickle, penny = int(quarter), int(dime), int(nickle), int(penny)
         money_total = quarter * 0.25 + dime * 0.1 + nickle * 0.05 + penny * 0.01
 
@@ -109,4 +119,4 @@ while is_machine_on:
             # DONE: if the coffee transaction was successful,
             #   deduct the amount of water, milk and coffee from resource
             #   then, print("Here is your {choice}. Enjoy!")
-            print(f"Here is your {menu_choice}. Enjoy!")
+            dispense_menu(menu_choice)
