@@ -111,7 +111,7 @@ while is_machine_on:
             if change > 0:
                 print(f"Here is ${change:.2f} dollars in change.")
 
-
-# TODO: if the coffee transaction was successful,
-#   deduct the amount of water, milk and coffee from resource
-#   then, print("Here is your {choice}. Enjoy!")
+            # DONE: if the coffee transaction was successful,
+            #   deduct the amount of water, milk and coffee from resource
+            #   then, print("Here is your {choice}. Enjoy!")
+            print(f"Here is your {menu_choice}. Enjoy!")
