@@ -30,9 +30,17 @@ resources = {
     "coffee": 100,
 }
 
-# TODO: do following while dispensing is not finished:
-# TODO: take input("What would you like? (espresso/latte/cappuccino): ")
-# TODO: if input is "off", terminate dispensing
+# DONE: do following while dispensing is not finished:
+is_machine_on = True
+while is_machine_on:
+    # DONE: take input("What would you like? (espresso/latte/cappuccino): ")
+    user_command = input("What would you like? (espresso/latte/cappuccino): ")
+
+    # DONE: if input is "off", terminate dispensing
+    if user_command == "off":
+        is_machine_on = False
+        print("Turning off the coffee machine. Good bye!")
+
 # TODO: if input is "report", print Water, Milk, Coffee, Money remainders
 #   each in each line
 # TODO: if input is either of the coffee choices,
