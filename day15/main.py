@@ -35,24 +35,19 @@ resources = {
 def is_resources_sufficient_for(input_menu):
     assert input_menu in MENU.keys()
 
-    ingredient = MENU[input_menu]["ingredients"]
-    req_water = ingredient["water"]
-    req_milk = ingredient["milk"]
-    req_coffee = ingredient["coffee"]
-    return resources.water >= req_water and resources.milk >= req_milk and resources.coffee >= req_coffee
+    for ingredient, cost in MENU[input_menu]["ingredients"].items():
+        if resources[ingredient] < cost:
+            return False
+    return True
 
 
 def deficient_resources(input_menu) -> list:
     assert input_menu in MENU.keys()
 
     result = []
-    ingredient = MENU[input_menu]["ingredients"]
-    req_water = ingredient["water"]
-    req_milk = ingredient["milk"]
-    req_coffee = ingredient["coffee"]
-    if req_water > resources.water: result.append("water")
-    if req_milk > resources.milk: result.append("milk")
-    if req_coffee > resources.coffee: result.append("coffee")
+    for ingredient, cost in MENU[input_menu]["ingredients"].items():
+        if resources[ingredient] < cost:
+            result.append(ingredient)
     return result
 
 
