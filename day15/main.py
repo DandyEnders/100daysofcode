@@ -88,7 +88,7 @@ while is_machine_on:
     #   and if resources are not sufficient,
     #   print "Sorry there is not enough {resource}."
     elif menu_choice in MENU.keys() and not is_resources_sufficient_for(menu_choice):
-        print(f"Sorry there is not enough {', '.join(deficient_resources(menu_choice))}.")
+        print(f"Sorry there is not enough {' & '.join(deficient_resources(menu_choice))}.")
 
     # DONE: if input is either of the coffee choices,
     #   and if resources are sufficient,
