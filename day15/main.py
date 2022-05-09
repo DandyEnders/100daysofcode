@@ -35,7 +35,7 @@ resources = {
 def is_resources_sufficient_for(input_menu):
     assert input_menu in MENU.keys()
 
-    ingredient = MENU["input_menu"]["ingredients"]
+    ingredient = MENU[input_menu]["ingredients"]
     req_water = ingredient["water"]
     req_milk = ingredient["milk"]
     req_coffee = ingredient["coffee"]
@@ -46,7 +46,7 @@ def deficient_resources(input_menu) -> list:
     assert input_menu in MENU.keys()
 
     result = []
-    ingredient = MENU["input_menu"]["ingredients"]
+    ingredient = MENU[input_menu]["ingredients"]
     req_water = ingredient["water"]
     req_milk = ingredient["milk"]
     req_coffee = ingredient["coffee"]
