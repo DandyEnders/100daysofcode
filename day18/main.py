@@ -14,3 +14,7 @@ timmy.right(90)
 
 screen = Screen()
 screen.exitonclick()
+
+import heroes
+
+print(heroes.gen())
